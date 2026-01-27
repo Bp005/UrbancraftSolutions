@@ -18,7 +18,7 @@ const UrbancraftWebsite = () => {
       setScrolled(window.scrollY > 50);
       setShowBackToTop(window.scrollY > 300);
 
-      const sections = ['home', 'about', 'process', 'projects', 'clients', 'contact'];
+      const sections = ['home', 'about', 'services','process', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -64,113 +64,85 @@ const UrbancraftWebsite = () => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'services', label: 'Services' },
     { id: 'process', label: 'Process' },
     { id: 'projects', label: 'Projects' },
-    { id: 'clients', label: 'Clients' },
     { id: 'contact', label: 'Contact' }
   ];
 
-  const clients = [
-    'NAVFAC', 'Dusit Thani', 'The World Bank', 
-    'Tiger Palace', 'USAID', 'Himalayan Builders'
-  ];
+  
 
   const processSteps = [
     {
       number: '01',
-      title: 'Plan',
-      description: 'Strategic planning and conceptualization tailored to your vision and context.'
+      title: 'Consultation and Requirement Gathering',
+      description: 'We begin by meeting withthe client to understand their needs, vision, site conditions,and budget. This helps us shape a clear and realistic plan tailored to their goals.'
     },
     {
       number: '02',
-      title: 'Research',
-      description: 'In-depth analysis, feasibility studies, and exploration of sustainable solutions.'
+      title: 'Design and Planning',
+      description: 'Our team prepares architectural and structural designs, along with technical drawings, estimates,and schedules. We ensure clientfeedback is incorporated at every stage before final approval.'
     },
     {
       number: '03',
-      title: 'Present',
-      description: 'Comprehensive design presentations and documentation for seamless execution.'
+      title: 'Execution and Supervision',
+      description: 'Once approved, we begin the construction or renovation process. Our team oversees site work, manages resources and ensures quality and safety throughout the project..'
+    },
+    {
+      number: '04',
+      title: 'Handover and Support',
+      description: 'After successful completion, wehand over the project with allnecessary documentation. Weremain available for any postcompletion support ormaintenance consultation'
     }
   ];
 
   const achievements = [
     {
-      title: 'Design & Construction Supervision for GIT Infrastructure',
-      description: 'Comprehensive supervision services for a landmark technology infrastructure development project.',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80'
+      title: 'Client-Focused Approach',
+      description: 'We prioritize undertanding your needs and vision, ensuring that every project is tailored to and meet your expectations from concept to completion.',
+      image: '/images/buildingdesign3.jpeg'
     },
     {
-      title: 'Recognized for Sustainable Design Excellence',
-      description: 'Awarded for outstanding contributions to sustainable and community-focused architecture.',
-      image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=900&q=80'
+      title: 'Skilled andPassionate Team',
+      description: 'Our dedicated team of engineers, architects and technicians brings experience, creativity and professionalism to every project we handle.',
+      image: '/images/buildingdesign2.jpeg'
     },
     {
-      title: 'Collaborations in Healthcare Architecture',
-      description: 'Delivering human-centered healthcare environments with international partners.',
-      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=80'
+      title: 'Quality and Reliability' ,
+      description: 'We are committed to delivering high-quality workusing reliable construction practices, materials, and project management to ensure long-lasting results.',
+      image: '/images/buildingdesign1.jpeg'
     }
   ];
 
   const portfolioImages = [
     {
-      url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
-      title: 'Modern Residential Complex',
-      category: 'Residential'
+      url: 'images/wardoffice.jpeg',
+      title: 'Ward Office Virkot Municipality Ward 4',
+      category:'ongoing',
+      description: 'Successfully completed civil works as subcontractor. Completed on Ashad 12, 2082.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      title: 'Luxury Villa Design',
-      category: 'Residential'
+      url: 'images/pepsicola.jpeg',
+      title: 'Residential House - Pepsicola',
+      category: 'Ongoing',
+      description: 'Well-planned home development project. Started from Jestha 12, 2082.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-      title: 'Contemporary Office Space',
-      category: 'Commercial'
+      url: 'images/syangja.jpeg',
+      title: 'Residential House - Syangja',
+      category: 'Completed',
+      description: 'Simple, durable, cost-effective home. Completed Baisakh 17 - Kartik 15, 2081.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
-      title: 'Sustainable Urban Housing',
-      category: 'Residential'
+      url: 'images/sitapaila.jpeg',
+      title: 'Residential Building - Sitapaila',
+      category: 'Completed',
+      description: 'Quality residential construction. Completed Falgun 28, 2080 - Ashoj 5, 2081.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
-      title: 'Commercial Plaza',
-      category: 'Commercial'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-      title: 'Mixed-Use Development',
-      category: 'Mixed-Use'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1486718448742-163732cd1544?w=1200&q=80',
-      title: 'High-Rise Architecture',
-      category: 'Commercial'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80',
-      title: 'Eco-Friendly Residence',
-      category: 'Residential'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80',
-      title: 'Urban Apartment Complex',
-      category: 'Residential'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80',
-      title: 'Minimalist Design Studio',
-      category: 'Commercial'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=1200&q=80',
-      title: 'Contemporary Townhouse',
-      category: 'Residential'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
-      title: 'Architectural Landmark',
-      category: 'Institutional'
+      url: 'images/birauta.jpeg',
+      title: 'Residential House - Birauta Pokhara',
+      category: 'Completed',
+      description: 'Ground floor renovation and additional floor construction. Completed Mangsir 2, 2081 - Baisakh 6, 2082.'
     }
   ];
 
@@ -184,9 +156,16 @@ const UrbancraftWebsite = () => {
           <div className="flex items-center justify-between h-20">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-xl sm:text-2xl font-bold text-white tracking-tight hover:text-amber-400 transition-colors"
+              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
             >
-              Urbancraft Solutions
+              <img 
+                src="\images\WhatsApp Image 2026-01-26 at 11.09.46.jpeg"
+                alt="Urbancraft Solutions" 
+                className="h-12 w-auto"
+              />
+              <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Urbancraft Solutions
+              </span>
             </button>
 
             <div className="hidden lg:flex items-center space-x-8">
@@ -249,12 +228,11 @@ const UrbancraftWebsite = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
-            KOICA - POKHARA<br />
-            <span className="text-amber-400">RECYCLING & UPCYCLING</span><br />
-            CENTRE
+            URBANCRAFT<br />
+            <span className="text-amber-400">SOLUTIONS</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto px-4">
-            Sustainable Architecture & Innovative Design
+            Building the Future - Innovate, Design, Build
           </p>
           <button
             onClick={() => scrollToSection('about')}
@@ -289,10 +267,20 @@ const UrbancraftWebsite = () => {
                 Transforming ideas into spaces that inspire and elevate
               </h2>
               <p className="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed">
-                Founded in 1990, JK Associates (JKA) is a reputable design and consultancy firm with a robust client base across Nepal and abroad. Our multidisciplinary team blends architectural innovation with engineering precision.
+                    At Urbancraft Solution, we believe in
+                    combining technical expertise with
+                    thoughtful design to create spaces
+                    that are both functional and inspiring.
+                    Our team is driven by innovation,
+                    attention to detail, and a strong
+                    commitment to client satisfaction.
+                    From planning to execution, we work
+                    to ensure every project reflects
+                    reliability, sustainability, and smart
+                    engineering.
               </p>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                We leverage cutting-edge technology and sustainable practices to create spaces that are contextually grounded, environmentally responsible, and experientially rich.
+                We serve clients across residential, commercial, and institutional sectors, focusing on quality and professionalism in every project.
               </p>
             </div>
           </div>
@@ -334,21 +322,21 @@ const UrbancraftWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h3 className="text-amber-400 font-semibold uppercase tracking-wider mb-4">International Conference</h3>
+              <h3 className="text-amber-400 font-semibold uppercase tracking-wider mb-4">Our Vision</h3>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                Re-Renovate Symposium 2025
+                Building Better Communities
               </h2>
               <p className="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed">
-                JK Associates participated in the Re Renovate Symposium in Venice, joining architects, researchers, and cultural leaders from around the world.
+                Our vision is to become a trusted and leading name in Nepal's civil engineering and construction industry, known for shaping better communities through smart design, reliable construction, and a commitment to long-term value.
               </p>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Our contribution focused on contextual renovation, adaptive reuse, and responsible architectural practice for heritage and contemporary environments.
+                Our mission is to deliver high-quality, innovative, and sustainable design and construction solutions that meet the unique needs of our clients, while upholding integrity, professionalism, and technical excellence in every project we undertake.
               </p>
             </div>
             <div>
               <img
                 src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80"
-                alt="Conference"
+                alt="Construction"
                 className="rounded-3xl shadow-2xl w-full h-[400px] sm:h-[500px] object-cover"
               />
             </div>
@@ -364,7 +352,7 @@ const UrbancraftWebsite = () => {
               Our Portfolio
             </h2>
             <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">
-              Explore our diverse range of architectural projects that showcase innovation, sustainability, and design excellence.
+              Explore our diverse range of projects showcasing innovation, sustainability, and design excellence.
             </p>
           </div>
 
@@ -377,11 +365,9 @@ const UrbancraftWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Company Achievements
+              Why choose us?
             </h2>
-            <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">
-              Key milestones we've accomplished through dedication, innovation, and excellence.
-            </p>
+          
           </div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
@@ -405,10 +391,10 @@ const UrbancraftWebsite = () => {
                   <p className="text-gray-600 mb-4 text-sm sm:text-base">
                     {achievement.description}
                   </p>
-                  <button className="text-amber-400 font-semibold inline-flex items-center space-x-2 group-hover:space-x-3 transition-all text-sm sm:text-base">
+                  {/* <button className="text-amber-400 font-semibold inline-flex items-center space-x-2 group-hover:space-x-3 transition-all text-sm sm:text-base">
                     <span>Read More</span>
                     <ChevronRight size={16} />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
@@ -416,7 +402,7 @@ const UrbancraftWebsite = () => {
         </div>
       </section>
 
-      {/* Clients Section */}
+      {/* Clients Section
       <section id="clients" className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-12 sm:mb-16 text-center">
@@ -433,7 +419,7 @@ const UrbancraftWebsite = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className="py-16 sm:py-24 bg-white">
@@ -444,7 +430,7 @@ const UrbancraftWebsite = () => {
               We'd Love to Hear from You
             </h2>
             <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto mb-8">
-              Interested in contributing to our architectural journey? Upload your resume to be part of our talent pool.
+              Ready to start your next project? Get in touch with us today.
             </p>
             <button
               onClick={() => {
@@ -464,22 +450,22 @@ const UrbancraftWebsite = () => {
             {/* Quick Contact Info */}
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12">
               <a 
-                href="tel:+97715706831" 
+                href="tel:+9779702519450" 
                 className="flex items-center space-x-3 text-slate-900 hover:text-amber-400 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-amber-400/10 flex items-center justify-center group-hover:bg-amber-400 transition-colors">
                   <Phone size={20} className="text-amber-400 group-hover:text-white transition-colors" />
                 </div>
-                <span className="text-base sm:text-lg font-medium">+977-1-5706831</span>
+                <span className="text-base sm:text-lg font-medium">+977 9702519450</span>
               </a>
               <a 
-                href="mailto:info@jkassoct.com" 
+                href="mailto:urbancraftconstructs@gmail.com" 
                 className="flex items-center space-x-3 text-slate-900 hover:text-amber-400 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-amber-400/10 flex items-center justify-center group-hover:bg-amber-400 transition-colors">
                   <Mail size={20} className="text-amber-400 group-hover:text-white transition-colors" />
                 </div>
-                <span className="text-base sm:text-lg font-medium">info@jkassoct.com</span>
+                <span className="text-base sm:text-lg font-medium">urbancraftconstructs@gmail.com</span>
               </a>
             </div>
           </div>
@@ -492,9 +478,9 @@ const UrbancraftWebsite = () => {
                 <div className="text-center p-8">
                   <MapPin size={48} className="text-amber-400 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Our Location</h3>
-                  <p className="text-gray-600 mb-4">JK Associates<br/>Bhaktithapa Rd, Kathmandu 44600<br/>Nepal</p>
+                  <p className="text-gray-600 mb-4">Urbancraft Solution Pvt. Ltd.<br/>Kathmandu, Nepal</p>
                   <a 
-                    href="https://www.google.com/maps/search/?api=1&query=JK+Associates+Bhaktithapa+Rd+Kathmandu+44600"
+                    href="https://www.google.com/maps/search/?api=1&query=Kathmandu+Nepal"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-amber-400 text-slate-900 px-6 py-3 rounded-full font-semibold hover:bg-amber-500 transition-all duration-300"
@@ -511,7 +497,7 @@ const UrbancraftWebsite = () => {
                 Let's Shape Your Ideas!
               </h3>
               <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
-                We sketch the architectural prefectural aspiring architects plans.
+                Contact us for your next construction project.
               </p>
               
               <div className="space-y-4 sm:space-y-5">
@@ -670,9 +656,14 @@ const ScrollGallery = ({ images }) => {
               <p className="text-amber-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2">
                 {image.category}
               </p>
-              <h3 className="text-white text-lg sm:text-xl font-bold">
+              <h3 className="text-white text-lg sm:text-xl font-bold mb-2">
                 {image.title}
               </h3>
+              {image.description && (
+                <p className="text-gray-300 text-sm">
+                  {image.description}
+                </p>
+              )}
             </div>
           </div>
         </div>
