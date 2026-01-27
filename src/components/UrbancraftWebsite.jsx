@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ChevronRight, ArrowUp, Phone, Mail, MapPin } from 'lucide-react';
-
+import { Menu, X, ChevronRight, ArrowUp, Phone, Mail } from 'lucide-react';
 const UrbancraftWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -473,21 +472,18 @@ const UrbancraftWebsite = () => {
           {/* Map + Form Section */}
           <div id="contact-form" className="grid lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Map Placeholder */}
-            <div className="rounded-2xl overflow-hidden shadow-2xl h-[400px] sm:h-[500px] lg:h-[600px] border border-slate-200 bg-slate-100 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <MapPin size={48} className="text-amber-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Our Location</h3>
-                  <p className="text-gray-600 mb-4">Urbancraft Solution Pvt. Ltd.<br/>Kathmandu, Nepal</p>
-                  <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Kathmandu+Nepal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-amber-400 text-slate-900 px-6 py-3 rounded-full font-semibold hover:bg-amber-500 transition-all duration-300"
-                  >
-                    Open in Google Maps
-                  </a>
-                </div>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-[400px]">
+              <div className="w-full h-full">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1086.677625676424!2d85.2862486!3d27.699845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19002b6b9ce3%3A0x62a1c9a4c75ce6e4!2sKumari%20Bank%20Bafal%20Branch!5e1!3m2!1sne!2snp!4v1769339041924!5m2!1sne!2snp"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Urbancraft Solutions Location"
+                ></iframe>
               </div>
             </div>
 
