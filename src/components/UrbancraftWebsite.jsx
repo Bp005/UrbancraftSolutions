@@ -1,23 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronRight, ArrowUp, Phone, Mail } from 'lucide-react';
+
 const UrbancraftWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [formData, setFormData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       setShowBackToTop(window.scrollY > 300);
 
-      const sections = ['home', 'about', 'services','process', 'projects', 'contact'];
+      const sections = ['home', 'about', 'process', 'services', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -48,66 +43,52 @@ const UrbancraftWebsite = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ fullName: '', phone: '', email: '', message: '' });
-  };
-
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
     { id: 'process', label: 'Process' },
+    { id: 'services', label: 'Services' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' }
   ];
-
-  
 
   const processSteps = [
     {
       number: '01',
       title: 'Consultation and Requirement Gathering',
-      description: 'We begin by meeting withthe client to understand their needs, vision, site conditions,and budget. This helps us shape a clear and realistic plan tailored to their goals.'
+      description: 'We begin by meeting with the client to understand their needs, vision, site conditions, and budget. This helps us shape a clear and realistic plan tailored to their goals.'
     },
     {
       number: '02',
       title: 'Design and Planning',
-      description: 'Our team prepares architectural and structural designs, along with technical drawings, estimates,and schedules. We ensure clientfeedback is incorporated at every stage before final approval.'
+      description: 'Our team prepares architectural and structural designs, along with technical drawings, estimates, and schedules. We ensure client feedback is incorporated at every stage before final approval.'
     },
     {
       number: '03',
       title: 'Execution and Supervision',
-      description: 'Once approved, we begin the construction or renovation process. Our team oversees site work, manages resources and ensures quality and safety throughout the project..'
+      description: 'Once approved, we begin the construction or renovation process. Our team oversees site work, manages resources and ensures quality and safety throughout the project.'
     },
     {
       number: '04',
       title: 'Handover and Support',
-      description: 'After successful completion, wehand over the project with allnecessary documentation. Weremain available for any postcompletion support ormaintenance consultation'
+      description: 'After successful completion, we hand over the project with all necessary documentation. We remain available for any post completion support or maintenance consultation.'
     }
   ];
 
   const achievements = [
     {
       title: 'Client-Focused Approach',
-      description: 'We prioritize undertanding your needs and vision, ensuring that every project is tailored to and meet your expectations from concept to completion.',
+      description: 'We prioritize understanding your needs and vision, ensuring that every project is tailored to and meet your expectations from concept to completion.',
       image: '/images/buildingdesign3.jpeg'
     },
     {
-      title: 'Skilled andPassionate Team',
+      title: 'Skilled and Passionate Team',
       description: 'Our dedicated team of engineers, architects and technicians brings experience, creativity and professionalism to every project we handle.',
       image: '/images/buildingdesign2.jpeg'
     },
     {
-      title: 'Quality and Reliability' ,
-      description: 'We are committed to delivering high-quality workusing reliable construction practices, materials, and project management to ensure long-lasting results.',
+      title: 'Quality and Reliability',
+      description: 'We are committed to delivering high-quality work using reliable construction practices, materials, and project management to ensure long-lasting results.',
       image: '/images/buildingdesign1.jpeg'
     }
   ];
@@ -116,7 +97,7 @@ const UrbancraftWebsite = () => {
     {
       url: 'images/wardoffice.jpeg',
       title: 'Ward Office Virkot Municipality Ward 4',
-      category:'ongoing',
+      category: 'Completed',
       description: 'Successfully completed civil works as subcontractor. Completed on Ashad 12, 2082.'
     },
     {
@@ -158,7 +139,7 @@ const UrbancraftWebsite = () => {
               className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
             >
               <img 
-                src="\images\WhatsApp Image 2026-01-26 at 11.09.46.jpeg"
+                src="/images/WhatsApp Image 2026-01-26 at 11.09.46.jpeg"
                 alt="Urbancraft Solutions" 
                 className="h-12 w-auto"
               />
@@ -266,17 +247,7 @@ const UrbancraftWebsite = () => {
                 Transforming ideas into spaces that inspire and elevate
               </h2>
               <p className="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed">
-                    At Urbancraft Solution, we believe in
-                    combining technical expertise with
-                    thoughtful design to create spaces
-                    that are both functional and inspiring.
-                    Our team is driven by innovation,
-                    attention to detail, and a strong
-                    commitment to client satisfaction.
-                    From planning to execution, we work
-                    to ensure every project reflects
-                    reliability, sustainability, and smart
-                    engineering.
+                At Urbancraft Solution, we believe in combining technical expertise with thoughtful design to create spaces that are both functional and inspiring. Our team is driven by innovation, attention to detail, and a strong commitment to client satisfaction. From planning to execution, we work to ensure every project reflects reliability, sustainability, and smart engineering.
               </p>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
                 We serve clients across residential, commercial, and institutional sectors, focusing on quality and professionalism in every project.
@@ -299,7 +270,7 @@ const UrbancraftWebsite = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {processSteps.map((step, index) => (
               <div
                 key={index}
@@ -316,7 +287,109 @@ const UrbancraftWebsite = () => {
         </div>
       </section>
 
-      {/* Conference Section */}
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-gradient-to-b from-white to-slate-50">
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              SERVICES
+            </h2>
+            <div className="w-24 h-1 bg-amber-400 mx-auto mb-6"></div>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Comprehensive solutions tailored to bring your vision to life
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Service 1 */}
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-100">
+              <div className="p-8">
+                <div className="w-14 h-14 bg-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  Architectural and Structural Design
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  We provide customized architectural and structural design services for residential, commercial, and public buildings. Our team focuses on functionality, aesthetics, and safety, ensuring each design meets client needs, site conditions, and regulatory standards.
+                </p>
+              </div>
+              <div className="h-1 bg-gradient-to-r from-amber-400 to-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            </div>
+
+            {/* Service 2 */}
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-100">
+              <div className="p-8">
+                <div className="w-14 h-14 bg-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  Construction and Project Execution
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  From small homes to larger buildings, we manage the entire construction process with attention to quality, budget, and timelines. Our skilled team and reliable methods ensure that every project is built to last.
+                </p>
+              </div>
+              <div className="h-1 bg-gradient-to-r from-amber-400 to-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            </div>
+
+            {/* Service 3 */}
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-100">
+              <div className="p-8">
+                <div className="w-14 h-14 bg-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  Renovation and Interior Works
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  We offer renovation, remodeling, and interior design services to upgrade and enhance existing spaces. Whether it's a home, office, or restaurant, we bring new life to structures through thoughtful planning and execution.
+                </p>
+              </div>
+              <div className="h-1 bg-gradient-to-r from-amber-400 to-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            </div>
+
+            {/* Service 4 */}
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-100">
+              <div className="p-8">
+                <div className="w-14 h-14 bg-amber-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  Engineering Consultation and Site Supervision
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  We assist clients with technical advice, cost estimation, planning, and on-site supervision. Our goal is to ensure projects run smoothly, maintain quality standards, and avoid costly delays or errors.
+                </p>
+              </div>
+              <div className="h-1 bg-gradient-to-r from-amber-400 to-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="bg-slate-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-400 hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center space-x-2"
+            >
+              <span>Start Your Project</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
       <section className="py-16 sm:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -343,7 +416,7 @@ const UrbancraftWebsite = () => {
         </div>
       </section>
 
-      {/* Portfolio Gallery Section with Scroll Animation */}
+      {/* Portfolio Gallery Section */}
       <section id="projects" className="py-16 sm:py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
@@ -359,14 +432,13 @@ const UrbancraftWebsite = () => {
         </div>
       </section>
 
-      {/* Achievements Section */}
+      {/* Why Choose Us Section */}
       <section className="py-16 sm:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Why choose us?
+              Why Choose Us?
             </h2>
-          
           </div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
@@ -390,35 +462,12 @@ const UrbancraftWebsite = () => {
                   <p className="text-gray-600 mb-4 text-sm sm:text-base">
                     {achievement.description}
                   </p>
-                  {/* <button className="text-amber-400 font-semibold inline-flex items-center space-x-2 group-hover:space-x-3 transition-all text-sm sm:text-base">
-                    <span>Read More</span>
-                    <ChevronRight size={16} />
-                  </button> */}
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Clients Section
-      <section id="clients" className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-12 sm:mb-16 text-center">
-            Our Clients
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-full border border-slate-200 px-4 sm:px-6 py-3 sm:py-4 text-center shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center"
-              >
-                <span className="text-slate-600 font-medium text-xs sm:text-sm">{client}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className="py-16 sm:py-24 bg-white">
@@ -431,23 +480,9 @@ const UrbancraftWebsite = () => {
             <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto mb-8">
               Ready to start your next project? Get in touch with us today.
             </p>
-            <button
-              onClick={() => {
-                const element = document.getElementById('contact-form');
-                if (element) {
-                  const offset = 80;
-                  const elementPosition = element.getBoundingClientRect().top;
-                  const offsetPosition = elementPosition + window.pageYOffset - offset;
-                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                }
-              }}
-              className="inline-block bg-amber-400 text-slate-900 px-8 py-3 rounded-full font-semibold hover:bg-amber-500 transition-all duration-300 shadow-lg hover:shadow-xl mb-12"
-            >
-              Reach out to us
-            </button>
 
             {/* Quick Contact Info */}
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 mb-12">
               <a 
                 href="tel:+9779702519450" 
                 className="flex items-center space-x-3 text-slate-900 hover:text-amber-400 transition-colors group"
@@ -469,103 +504,39 @@ const UrbancraftWebsite = () => {
             </div>
           </div>
 
-          {/* Map + Form Section */}
-          <div id="contact-form" className="grid lg:grid-cols-2 gap-8 sm:gap-12">
-            {/* Map Placeholder */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-[400px]">
-              <div className="w-full h-full">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1086.677625676424!2d85.2862486!3d27.699845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19002b6b9ce3%3A0x62a1c9a4c75ce6e4!2sKumari%20Bank%20Bafal%20Branch!5e1!3m2!1sne!2snp!4v1769339041924!5m2!1sne!2snp"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Urbancraft Solutions Location"
-                ></iframe>
-              </div>
+          {/* Centered Map */}
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Our Location
+            </h2>
+          </div> 
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden h-[500px] sm:h-[600px] border border-slate-200">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1086.677625676424!2d85.2862486!3d27.699845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19002b6b9ce3%3A0x62a1c9a4c75ce6e4!2sKumari%20Bank%20Bafal%20Branch!5e1!3m2!1sne!2snp!4v1769339041924!5m2!1sne!2snp"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Urbancraft Solutions Location"
+              ></iframe>
             </div>
-
-            {/* Contact Form */}
-            <div className="bg-slate-50 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg border border-slate-200">
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                Let's Shape Your Ideas!
-              </h3>
-              <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
-                Contact us for your next construction project.
+            
+            {/* Location Text Below Map */}
+            <div className="text-center mt-6">
+              <p className="text-slate-600 text-lg">
+                <span className="font-semibold text-slate-900">Urbancraft Solution Pvt. Ltd.</span>
+                <br />
+                Near Kumari Bank, Bafal, Kathmandu, Nepal
               </p>
-              
-              <div className="space-y-4 sm:space-y-5">
-                <div>
-                  <label htmlFor="fullName" className="sr-only">Full Name</label>
-                  <input
-                    id="fullName"
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleInputChange}
-                    placeholder="Full Name"
-                    autoComplete="name"
-                    required
-                    className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-white border border-slate-300 rounded-lg text-slate-900 placeholder-gray-500 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all text-sm sm:text-base"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="sr-only">Phone</label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="Phone"
-                    autoComplete="tel"
-                    className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-white border border-slate-300 rounded-lg text-slate-900 placeholder-gray-500 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all text-sm sm:text-base"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="sr-only">Email</label>
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="Email"
-                    autoComplete="email"
-                    required
-                    className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-white border border-slate-300 rounded-lg text-slate-900 placeholder-gray-500 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all text-sm sm:text-base"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="sr-only">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Message"
-                    rows="6"
-                    className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-white border border-slate-300 rounded-lg text-slate-900 placeholder-gray-500 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all resize-none text-sm sm:text-base"
-                  ></textarea>
-                </div>
-                
-                <button
-                  onClick={handleSubmit}
-                  className="w-full bg-amber-400 text-slate-900 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-amber-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Submit
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Back to Top Button */}
       {showBackToTop && (
         <button
           onClick={scrollToTop}
