@@ -205,8 +205,26 @@ const UrbancraftWebsite = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-900/90"></div>
         </div>
+
+        {/* Logo Watermark */}
+        <div className="absolute top-28 left-8 sm:left-12 opacity-20 hidden lg:block">
+          <img 
+            src="/images/WhatsApp Image 2026-01-26 at 11.09.46.jpeg"
+            alt="Urbancraft Solutions" 
+            className="h-32 w-auto"
+          />
+        </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Mobile Logo Display */}
+          <div className="mb-8 lg:hidden">
+            <img 
+              src="/images/WhatsApp Image 2026-01-26 at 11.09.46.jpeg"
+              alt="Urbancraft Solutions" 
+              className="h-20 w-auto mx-auto opacity-90"
+            />
+          </div>
+
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
             URBANCRAFT<br />
             <span className="text-amber-400">SOLUTIONS</span>
@@ -231,8 +249,17 @@ const UrbancraftWebsite = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="about" className="py-16 sm:py-24 bg-white relative overflow-hidden">
+        {/* Background Logo Watermark */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none hidden xl:block">
+          <img 
+            src="/images/WhatsApp Image 2026-01-26 at 11.09.46.jpeg"
+            alt="Urbancraft Solutions" 
+            className="h-96 w-auto"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
               <img
@@ -242,7 +269,14 @@ const UrbancraftWebsite = () => {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <h3 className="text-amber-400 font-semibold uppercase tracking-wider mb-4">About Us</h3>
+              <div className="flex items-center space-x-3 mb-6">
+                <img 
+                  src="/images/WhatsApp Image 2026-01-26 at 11.09.46.jpeg"
+                  alt="Urbancraft Solutions" 
+                  className="h-12 w-auto"
+                />
+                <h3 className="text-amber-400 font-semibold uppercase tracking-wider">About Us</h3>
+              </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
                 Transforming ideas into spaces that inspire and elevate
               </h2>
@@ -505,11 +539,6 @@ const UrbancraftWebsite = () => {
           </div>
 
           {/* Centered Map */}
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Our Location
-            </h2>
-          </div> 
           <div className="max-w-5xl mx-auto">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden h-[500px] sm:h-[600px] border border-slate-200">
               <iframe
@@ -535,6 +564,74 @@ const UrbancraftWebsite = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 items-center">
+            {/* Logo and Company Name */}
+            <div className="flex flex-col items-center md:items-start">
+              <div className="flex items-center space-x-3 mb-4">
+                <img 
+                  src="/images/WhatsApp Image 2026-01-26 at 11.09.46.jpeg"
+                  alt="Urbancraft Solutions" 
+                  className="h-16 w-auto"
+                />
+                <span className="text-xl font-bold text-white">
+                  Urbancraft Solutions
+                </span>
+              </div>
+              <p className="text-gray-400 text-sm text-center md:text-left">
+                Building the Future
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div className="text-center">
+              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <div className="flex flex-wrap justify-center gap-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-gray-400 hover:text-amber-400 transition-colors text-sm"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div className="text-center md:text-right">
+              <h4 className="text-lg font-semibold mb-4">Contact</h4>
+              <div className="space-y-2">
+                <a 
+                  href="tel:+9779702519450" 
+                  className="block text-gray-400 hover:text-amber-400 transition-colors text-sm"
+                >
+                  +977 9702519450
+                </a>
+                <a 
+                  href="mailto:urbancraftconstructs@gmail.com" 
+                  className="block text-gray-400 hover:text-amber-400 transition-colors text-sm"
+                >
+                  urbancraftconstructs@gmail.com
+                </a>
+                <p className="text-gray-400 text-sm">
+                  Bafal, Kathmandu, Nepal
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-white/10 mt-8 pt-8 text-center">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Urbancraft Solution Pvt. Ltd. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
 
       {/* Back to Top Button */}
       {showBackToTop && (
